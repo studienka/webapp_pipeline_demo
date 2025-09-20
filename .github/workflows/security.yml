@@ -35,5 +35,7 @@ jobs:
       - name: RunTrivyDependencyScan
         uses: aquasecurity/trivy-action@0.30.0
         with:
-          scan-type: python
-          file: requirements.txt
+          scan-type: fs
+          scan-ref: .
+          format: "json"
+          output: 'trivy-results.json'
