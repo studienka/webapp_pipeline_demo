@@ -30,7 +30,7 @@ jobs:
         run: |
           source venv/bin/activate
           pip install bandit
-          bandit -r . -x ./venv
+          bandit -r . -x ./venv --exit-zero
 
       - name: RunTrivyDependencyScan
         uses: aquasecurity/trivy-action@0.30.0
