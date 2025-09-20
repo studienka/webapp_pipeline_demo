@@ -33,7 +33,7 @@ jobs:
           bandit -r . -x ./venv
 
       - name: RunTrivyDependencyScan
-        uses: aquasecurity/trivy-action@latest
+        uses: aquasecurity/trivy-action@v0.33.1
         with:
           scan-type: python
           file: requirements.txt
