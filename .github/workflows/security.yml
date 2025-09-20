@@ -39,3 +39,6 @@ jobs:
           scan-ref: .
           format: "json"
           output: 'trivy-results.json'
+
+      - name: ShowTrivyResults
+        run: cat trivy-results.json
