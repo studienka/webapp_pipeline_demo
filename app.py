@@ -31,5 +31,5 @@ def secret():
     return jsonify({"secret_preview": (key[:8] + '...') if key else None})
 
 if __name__ == '__main__':
-    # debug left as True
-    app.run(debug=True)
+    # leaving debug as True
+    app.run(host="0.0.0.0", port=5000, debug=True)

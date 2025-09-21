@@ -40,5 +40,19 @@ jobs:
           format: "json"
           output: 'trivy-results.json'
 
+      - name: BuildDockerImage
+        run: docker build -t insecurewebappdemo:latest . 
+
+      - name: TrivyImageScan
+        uses: aquasecurity/trivy-action@0.30.0
+        with:
+          scan-type: image
+          image-ref: insecurewebappdemo:latest
+          format: "json"
+          output: 'trivy-image-results.json'
+
       - name: ShowTrivyResults
-        run: cat trivy-results.json
+        run: | 
+          cat trivy-results.json
+          cat trivy-image-results.json
+
